@@ -86,3 +86,5 @@
  GET / 200 in 55ms (compile: 7ms, render: 47ms)
  GET / 200 in 51ms (compile: 7ms, render: 45ms)
  GET /booking 200 in 58ms (compile: 7ms, render: 51ms)
+ GET / 200 in 60ms (compile: 10ms, render: 50ms)
+^C^C
