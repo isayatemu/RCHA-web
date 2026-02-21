@@ -1,0 +1,16 @@
+{
+  "name": "Rose Changa Herbalist Africa",
+  "short_name": "Rose Changa",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f3e9",
+  "theme_color": "#114835",
+  "description": "Bilingual herbal wellness support site for Rose Changa Herbalist Africa.",
+  "icons": [
+    {
+      "src": "/brand/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
