@@ -1,0 +1,17 @@
+[
+  {
+    "formType": "booking",
+    "payload": {
+      "fullName": "Isaya Temu",
+      "phone": "0752538127",
+      "email": "isayajoseph914@gmail.com",
+      "location": "Arusha",
+      "interest": "digestive",
+      "duration": "3",
+      "concerns": "sili vzuri",
+      "contactMethod": "WhatsApp",
+      "consent": "on"
+    },
+    "submittedAt": "2026-02-23T13:00:21.407Z"
+  }
+]
