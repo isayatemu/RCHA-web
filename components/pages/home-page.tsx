@@ -2,13 +2,13 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { HeroSection } from "@/components/hero/HeroSection";
 import { useLocale } from "@/components/providers/locale-provider";
 import { products } from "@/data/products";
 import { testimonials } from "@/data/testimonials";
 import { faqItems } from "@/data/faq";
 import { youtubeVideos } from "@/data/youtube";
 import { assetMap } from "@/data/assets";
-import { business } from "@/data/business";
 import { ProductCard } from "@/components/sections/product-card";
 import { TestimonialCard } from "@/components/sections/testimonial-card";
 import { FaqAccordion } from "@/components/sections/faq-accordion";
@@ -21,40 +21,7 @@ export const HomePageClient = () => {
 
   return (
     <div className="space-y-16">
-      <section className="grid items-center gap-8 rounded-3xl bg-gradient-to-br from-emerald-950 to-maroon-900 px-6 py-10 text-white md:grid-cols-2 md:px-10">
-        <div className="fade-up">
-          <p className="text-xs uppercase tracking-[0.2em] text-emerald-200">Rose Changa Herbalist Africa</p>
-          <h1 className="mt-3 text-4xl font-bold leading-tight md:text-5xl">
-            {locale === "sw" ? "Afya asilia yenye uaminifu, ufuatiliaji na heshima" : "Trusted traditional wellness with follow-up and care"}
-          </h1>
-          <p className="mt-4 text-sm text-emerald-100/90">
-            {locale === "sw"
-              ? "Miaka 10+ ya uzoefu, kutoka Njiro Arusha hadi diaspora. Tunatoa ushauri wa dozi binafsi kwa njia salama na yenye maadili."
-              : "10+ years of experience from Njiro, Arusha supporting clients locally and in diaspora with ethical personalized dose consultation."}
-          </p>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Link href="/booking" className="rounded-full bg-white px-5 py-3 text-sm font-semibold text-emerald-950">Book Consultation</Link>
-            <Link href="/products" className="rounded-full border border-white/50 px-5 py-3 text-sm font-semibold text-white">{locale === "sw" ? "Angalia Bidhaa" : "Browse Products"}</Link>
-          </div>
-        </div>
-        <div className="relative h-72 overflow-hidden rounded-2xl border border-white/20">
-          <Image src={mediaUrl(assetMap.featuredImages[0])} alt="Rose Changa product" fill className="object-cover" unoptimized />
-        </div>
-      </section>
-
-      <section className="grid gap-4 md:grid-cols-4">
-        {[
-          [business.experience, locale === "sw" ? "Uzoefu" : "Experience"],
-          ["Natural blends", locale === "sw" ? "Mchanganyiko wa asili" : "Traditional formulas"],
-          [locale === "sw" ? "Ofisi Arusha" : "Arusha office", business.location],
-          ["Client-reported", "Improvement"],
-        ].map(([title, text]) => (
-          <div key={String(title)} className="rounded-2xl border border-emerald-900/15 bg-white p-4">
-            <p className="text-xs uppercase tracking-[0.15em] text-maroon-900">{title}</p>
-            <p className="mt-2 text-sm text-emerald-900/85">{text}</p>
-          </div>
-        ))}
-      </section>
+      <HeroSection />
 
       <section>
         <div className="mb-5 flex items-end justify-between">
