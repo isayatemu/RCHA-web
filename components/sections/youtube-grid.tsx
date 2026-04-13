@@ -2,11 +2,13 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { useLocale } from "@/components/providers/locale-provider";
 import { getYouTubeId } from "@/lib/site";
 
 type Props = { urls: string[] };
 
 export const YouTubeGrid = ({ urls }: Props) => {
+  const { locale } = useLocale();
   const [active, setActive] = useState<string | null>(null);
 
   return (
@@ -21,8 +23,10 @@ export const YouTubeGrid = ({ urls }: Props) => {
                 <Image src={thumb} alt="YouTube thumbnail" fill className="object-cover transition group-hover:scale-105" unoptimized />
               </div>
               <div className="flex items-center justify-between bg-white p-3 text-sm text-emerald-900">
-                <span>Watch Story</span>
-                <span className="rounded-full bg-maroon-900 px-3 py-1 text-white">Play</span>
+                <span>{locale === "sw" ? "Tazama Video" : "Watch Video"}</span>
+                <span className="rounded-full bg-maroon-900 px-3 py-1 text-white">
+                  {locale === "sw" ? "Play" : "Play"}
+                </span>
               </div>
             </button>
           );

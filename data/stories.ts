@@ -1,4 +1,12 @@
-export const stories = [
+export type Story = {
+  titleSw: string;
+  titleEn: string;
+  location: string;
+  summarySw: string;
+  summaryEn: string;
+};
+
+export const stories: Story[] = [
   {
     titleSw: "Kutoka kuchoka kila siku hadi mpangilio wa afya",
     titleEn: "From daily fatigue to a structured wellness routine",
@@ -18,7 +26,7 @@ export const stories = [
       "With meal timing guidance, trigger reduction, and herbal support, the client reported improved digestive comfort and routine stability.",
   },
   {
-    titleSw: "Huduma ya karibu kwa wellness ya muda mrefu",
+    titleSw: "Huduma ya karibu kwa ustawi wa muda mrefu",
     titleEn: "Close follow-up for long-term wellness",
     location: "Dar es Salaam, Tanzania",
     summarySw:
@@ -36,7 +44,7 @@ export const stories = [
       "The client highlighted privacy-first support and realistic guidance without cure promises.",
   },
   {
-    titleSw: "Mpango wa wellness unaoendana na maisha",
+    titleSw: "Mpango wa ustawi unaoendana na maisha",
     titleEn: "A wellness plan that fits real life",
     location: "Goma, DRC",
     summarySw:

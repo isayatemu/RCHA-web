@@ -15,19 +15,34 @@ const mimeByExt: Record<string, string> = {
 export async function GET(_req: Request, context: { params: Promise<{ path: string[] }> }) {
   const { path: segments } = await context.params;
   const decoded = segments.map((segment) => decodeURIComponent(segment)).join("/");
-  const safeName = path.basename(decoded);
+  const normalized = path.posix.normalize(decoded.replace(/\\/g, "/")).replace(/^\/+/, "");
 
-  const filePath = path.join(process.cwd(), "imgs&vids", safeName);
+  if (!normalized || normalized === "." || normalized === ".." || normalized.startsWith("../") || normalized.includes("/../")) {
+    return NextResponse.json({ error: "Invalid media path" }, { status: 400 });
+  }
+
+  const mediaRoot = path.resolve(process.cwd(), "imgs&vids");
+  const filePath = path.resolve(mediaRoot, normalized);
+
+  // Prevent path traversal outside imgs&vids root.
+  if (filePath !== mediaRoot && !filePath.startsWith(`${mediaRoot}${path.sep}`)) {
+    return NextResponse.json({ error: "Invalid media path" }, { status: 400 });
+  }
 
   try {
+    const stat = await fs.stat(filePath);
+    if (!stat.isFile()) {
+      return NextResponse.json({ error: "Asset not found" }, { status: 404 });
+    }
+
     const buffer = await fs.readFile(filePath);
-    const ext = path.extname(safeName).toLowerCase();
+    const ext = path.extname(filePath).toLowerCase();
     const type = mimeByExt[ext] ?? "application/octet-stream";
 
     return new NextResponse(buffer, {
       headers: {
         "Content-Type": type,
-        "Cache-Control": "public, max-age=3600",
+        "Cache-Control": "no-store",
       },
     });
   } catch {

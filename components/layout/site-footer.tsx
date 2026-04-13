@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { business } from "@/data/business";
 import { useLocale } from "@/components/providers/locale-provider";
+import { PhoneActionLink } from "@/components/ui/phone-action-link";
 import { FacebookIcon, InstagramIcon, TikTokIcon, WhatsAppIcon } from "@/components/ui/social-icons";
 
 const socials = [
@@ -25,8 +26,24 @@ export const SiteFooter = () => {
         </div>
         <div>
           <h4 className="text-sm font-semibold uppercase tracking-widest text-emerald-200">{locale === "sw" ? "Mawasiliano" : "Contact"}</h4>
-          <p className="mt-3 text-sm">{business.phone}</p>
-          <p className="text-sm">{business.email}</p>
+          <div className="mt-3 space-y-2">
+            {business.whatsappContacts.map((contact) => (
+              <PhoneActionLink
+                key={contact.key}
+                phone={contact.phone}
+                whatsappHref={contact.href}
+                className="block text-sm underline decoration-emerald-200/40 underline-offset-4 hover:decoration-emerald-50"
+              >
+                {contact.display}
+              </PhoneActionLink>
+            ))}
+          </div>
+          <a
+            href={`mailto:${business.email}`}
+            className="mt-2 block text-sm underline decoration-emerald-200/40 underline-offset-4 hover:decoration-emerald-50"
+          >
+            {business.email}
+          </a>
           <div className="mt-4 flex flex-wrap gap-3 text-sm">
             {socials.map((social) => {
               const Icon = social.icon;

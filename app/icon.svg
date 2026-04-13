@@ -1,10 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Rose Changa app icon">
   <defs>
-    <linearGradient id="fg" x1="0" y1="0" x2="1" y2="1">
+    <radialGradient id="iconGlow" cx="50%" cy="45%" r="70%">
+      <stop offset="0%" stop-color="#8cbf54"/>
+      <stop offset="100%" stop-color="#4f8f36"/>
+    </radialGradient>
+    <linearGradient id="iconLeaf" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#0f5f43"/>
       <stop offset="100%" stop-color="#5c1d2f"/>
     </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="12" fill="url(#fg)"/>
-  <path d="M32 14c7 6 11 15 11 25-8-4-13-11-16-19-3 8-8 15-16 19 0-10 4-19 11-25 3-2 6-4 10-5z" fill="#f7f3e9"/>
+
+  <rect width="64" height="64" rx="13" fill="#f7f3e9"/>
+  <circle cx="32" cy="32" r="27" fill="url(#iconGlow)" opacity="0.18"/>
+  <circle cx="32" cy="32" r="24" fill="none" stroke="#5c1d2f" stroke-opacity="0.5" stroke-width="1.5"/>
+  <circle cx="32" cy="32" r="20" fill="none" stroke="#0f5f43" stroke-opacity="0.35" stroke-width="1.2"/>
+
+  <text x="32" y="40" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#5c1d2f" font-weight="700">R</text>
+  <path d="M20 31c7 0 13 5 15 13-5-5-10-7-15-13Z" fill="url(#iconLeaf)" opacity="0.9"/>
+  <path d="M44 36c-6 2-11 6-13 12 4-4 8-6 13-12Z" fill="url(#iconLeaf)" opacity="0.9"/>
 </svg>

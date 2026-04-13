@@ -13,6 +13,14 @@ SVG social icons are rendered from `components/ui/social-icons.tsx`.
 ## Form providers (DB + Email)
 Forms post to `/api/forms/[form]` and use provider integrations in `lib/form-integrations.ts`.
 
+## Media folders (products)
+You can now organize media in nested folders inside `imgs&vids`, for example:
+- `imgs&vids/products/king-herbal-blend/cover.jpg`
+- `imgs&vids/products/king-herbal-blend/gallery-1.mp4`
+
+Use the same relative path in data files, e.g. `products/king-herbal-blend/cover.jpg`.
+The media API route now supports nested paths safely.
+
 ### 1) Supabase (DB)
 1. Create project in Supabase.
 2. Run SQL in `docs/supabase-form-submissions.sql`.

@@ -50,9 +50,16 @@ export const BookingForm = () => {
             <option value="immune">Immune support</option>
             <option value="digestive">Digestive comfort</option>
             <option value="kidney">Kidney support</option>
-            <option value="sugar-pressure">Sugar/Pressure wellness</option>
+            <option value="hepatitis-support">
+              {locale === "sw" ? "Msaada wa Homa ya Ini" : "Hepatitis Support"}
+            </option>
+            <option value="sugar-pressure">
+              {locale === "sw" ? "Ustawi wa Sukari/Presha" : "Sugar/Pressure wellness"}
+            </option>
             <option value="womens-health">Womens cycle support</option>
-            <option value="mens-health">Mens wellness support</option>
+            <option value="mens-health">
+              {locale === "sw" ? "Ustawi wa Wanaume" : "Mens wellness support"}
+            </option>
           </select>
         </label>
         <label className="text-sm">Duration<input name="duration" placeholder="e.g. 3 months" className={fieldClass} /></label>
@@ -66,7 +73,7 @@ export const BookingForm = () => {
         </label>
         <label className="mt-7 flex items-start gap-2 text-xs text-emerald-900/80">
           <input type="checkbox" name="consent" required className="mt-1" />
-          {locale === "sw" ? "Ninakubali masharti ya faragha na disclaimer ya huduma za wellness." : "I consent to privacy terms and wellness disclaimer."}
+          {locale === "sw" ? "Ninakubali masharti ya faragha na disclaimer ya huduma za ustawi." : "I consent to privacy terms and wellness disclaimer."}
         </label>
         <div className="md:col-span-2">
           <button type="submit" className="rounded-full bg-maroon-900 px-5 py-3 text-sm font-semibold text-white hover:bg-maroon-800">{locale === "sw" ? "Tuma Booking" : "Submit Booking"}</button>
