@@ -5,6 +5,7 @@ import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { WhatsAppFloat } from "@/components/layout/whatsapp-float";
 import { ServiceWorkerRegister } from "@/components/providers/sw-register";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://rosechanga.local";
 
@@ -31,6 +32,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <WhatsAppFloat />
           </div>
         </AppProviders>
+        <SpeedInsights />
       </body>
     </html>
   );
