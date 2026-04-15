@@ -82,19 +82,30 @@ export const saveSubmission = async (formType: SupportedForm, payload: Record<st
   };
 
   const mode = process.env.FORM_STORAGE_MODE ?? "provider";
+  const stored = mode === "provider" && hasSupabaseConfig() ? "supabase" : "local";
 
-  if (mode === "provider" && hasSupabaseConfig()) {
+  if (stored === "supabase") {
     await persistSupabase(record);
   } else {
     await persistLocal(record);
   }
 
+  let emailed = false;
+  let emailError: string | null = null;
+
   if (hasResendConfig()) {
-    await sendResendNotification(record);
+    try {
+      await sendResendNotification(record);
+      emailed = true;
+    } catch (error) {
+      emailError = error instanceof Error ? error.message : "Resend email failed";
+      console.error("Resend notification failed", error);
+    }
   }
 
   return {
-    stored: mode === "provider" && hasSupabaseConfig() ? "supabase" : "local",
-    emailed: hasResendConfig(),
+    stored,
+    emailed,
+    emailError,
   };
 };
