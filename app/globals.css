@@ -6,11 +6,46 @@
   --emerald-900: #114835;
   --maroon-900: #5c1d2f;
   --maroon-800: #7a273f;
+  --bg-glow-top: #e7efe5;
+  --bg-base: #f7f3e9;
+  --bg-glow-bottom: #f2ebdc;
+  --surface-card: rgba(255, 255, 255, 0.92);
+  --surface-card-strong: #ffffff;
+  --surface-muted: rgba(231, 239, 229, 0.88);
+  --text-primary: #0b2f22;
+  --text-secondary: #114835;
+  --text-soft: rgba(17, 72, 53, 0.76);
+  --border-soft: rgba(17, 72, 53, 0.12);
+  --shadow-soft: rgba(11, 47, 34, 0.08);
+}
+
+html.dark {
+  --ivory: #091611;
+  --emerald-950: #f6f1e6;
+  --emerald-900: #d8ede0;
+  --maroon-900: #9a4f69;
+  --maroon-800: #b2607d;
+  --bg-glow-top: #173528;
+  --bg-base: #08130f;
+  --bg-glow-bottom: #101d18;
+  --surface-card: rgba(15, 30, 24, 0.9);
+  --surface-card-strong: #11241d;
+  --surface-muted: rgba(23, 53, 40, 0.84);
+  --text-primary: #f6f1e6;
+  --text-secondary: #d8ede0;
+  --text-soft: rgba(216, 237, 224, 0.78);
+  --border-soft: rgba(177, 214, 194, 0.14);
+  --shadow-soft: rgba(0, 0, 0, 0.34);
 }
 
 body {
   font-family: "Segoe UI", "Trebuchet MS", sans-serif;
-  background: radial-gradient(circle at top right, #e7efe5 0%, #f7f3e9 55%, #f2ebdc 100%);
+  color: var(--text-primary);
+  background: radial-gradient(circle at top right, var(--bg-glow-top) 0%, var(--bg-base) 55%, var(--bg-glow-bottom) 100%);
+  transition:
+    background-color 0.3s ease,
+    background-image 0.3s ease,
+    color 0.3s ease;
 }
 
 .bg-ivory {
@@ -50,4 +85,83 @@ body {
 
 .fade-up {
   animation: fadeUp 0.6s ease-out both;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+html.dark body {
+  color: var(--text-primary);
+}
+
+html.dark header,
+html.dark .bg-ivory\/95 {
+  background-color: rgba(8, 19, 15, 0.9) !important;
+  border-color: var(--border-soft) !important;
+}
+
+html.dark .bg-ivory {
+  background-color: var(--ivory) !important;
+}
+
+html.dark [class*="bg-white"] {
+  background-color: var(--surface-card) !important;
+}
+
+html.dark [class*="text-emerald-950"] {
+  color: var(--text-primary) !important;
+}
+
+html.dark [class*="text-emerald-900"] {
+  color: var(--text-secondary) !important;
+}
+
+html.dark [class*="text-emerald-800"],
+html.dark [class*="text-emerald-700"],
+html.dark [class*="text-emerald-100"] {
+  color: var(--text-secondary) !important;
+}
+
+html.dark [class*="text-maroon-900"] {
+  color: #f0bfd0 !important;
+}
+
+html.dark [class*="border-emerald-900"] {
+  border-color: var(--border-soft) !important;
+}
+
+html.dark [class*="ring-emerald-900"] {
+  --tw-ring-color: var(--border-soft) !important;
+}
+
+html.dark [class*="bg-emerald-50"] {
+  background-color: rgba(22, 58, 46, 0.66) !important;
+}
+
+html.dark [class*="bg-[linear-gradient"] {
+  background-image: linear-gradient(155deg, rgba(18, 35, 28, 0.96), rgba(10, 22, 17, 0.95)) !important;
+}
+
+html.dark [class*="bg-[radial-gradient"] {
+  background-image:
+    radial-gradient(circle at top left, rgba(34, 70, 56, 0.42), transparent 34%),
+    radial-gradient(circle at bottom right, rgba(154, 79, 105, 0.2), transparent 38%) !important;
+}
+
+html.dark input,
+html.dark textarea,
+html.dark select {
+  color: var(--text-primary) !important;
+  background-color: var(--surface-card-strong) !important;
+  border-color: var(--border-soft) !important;
+}
+
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+  color: rgba(216, 237, 224, 0.48);
+}
+
+html.dark footer {
+  border-color: var(--border-soft) !important;
 }

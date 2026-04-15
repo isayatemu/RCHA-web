@@ -1,7 +1,12 @@
 "use client";
 
 import { LocaleProvider } from "@/components/providers/locale-provider";
+import { ThemeProvider } from "@/components/providers/theme-provider";
 
 export const AppProviders = ({ children }: { children: React.ReactNode }) => {
-  return <LocaleProvider>{children}</LocaleProvider>;
+  return (
+    <ThemeProvider>
+      <LocaleProvider>{children}</LocaleProvider>
+    </ThemeProvider>
+  );
 };
