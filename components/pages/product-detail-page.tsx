@@ -5,6 +5,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { useLocale } from "@/components/providers/locale-provider";
 import { Disclaimer } from "@/components/sections/disclaimer";
+import { ProductPricingBlock } from "@/components/sections/product-pricing-block";
 import { business } from "@/data/business";
 import { products } from "@/data/products";
 import { mediaUrl, whatsappPrefill } from "@/lib/site";
@@ -59,9 +60,15 @@ export const ProductDetailPageClient = ({ slug }: { slug: string }) => {
             <h1 className="mt-3 text-3xl font-semibold text-emerald-950 sm:text-4xl">{product.name}</h1>
             <p className="mt-4 text-base leading-7 text-emerald-950/85">{locale === "sw" ? product.shortSw : product.shortEn}</p>
             <p className="mt-4 text-sm leading-7 text-emerald-900/80">{locale === "sw" ? product.overviewSw : product.overviewEn}</p>
-            <p className="mt-5 rounded-2xl border border-emerald-900/10 bg-emerald-50/80 p-4 text-sm text-emerald-900">
-              {locale === "sw" ? business.pricingNoteSw : business.pricingNoteEn}
-            </p>
+            <div className="mt-5">
+              {product.priceOptions?.length ? (
+                <ProductPricingBlock product={product} locale={locale} variant="detail" />
+              ) : (
+                <p className="rounded-2xl border border-emerald-900/10 bg-emerald-50/80 p-4 text-sm text-emerald-900">
+                  {locale === "sw" ? business.pricingNoteSw : business.pricingNoteEn}
+                </p>
+              )}
+            </div>
 
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <Link

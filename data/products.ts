@@ -6,6 +6,12 @@ export type ProductCategoryKey =
   | "sugar"
   | "digestive";
 
+export type ProductPriceOption = {
+  labelSw: string;
+  labelEn: string;
+  amount: number;
+};
+
 export type Product = {
   slug: string;
   name: string;
@@ -25,6 +31,8 @@ export type Product = {
   howToUseEn: string[];
   precautionsSw: string[];
   precautionsEn: string[];
+  priceOptions?: ProductPriceOption[];
+  priceOrder?: number;
   image?: string;
   imageClassName?: string;
 };
@@ -70,6 +78,7 @@ export const products: Product[] = [
     slug: "detox",
     name: "Detox Go Natural",
     featured: true,
+    priceOrder: 4,
     categoryKey: "detox",
     categorySw: "Detox",
     categoryEn: "Detox",
@@ -95,6 +104,7 @@ export const products: Product[] = [
     howToUseEn: generalHowToUseEn,
     precautionsSw: generalPrecautionsSw,
     precautionsEn: generalPrecautionsEn,
+    priceOptions: [{ labelSw: "Bidhaa moja", labelEn: "Single product", amount: 35000 }],
     image: "products/detox/detox.png?v=20260413-2",
     imageClassName: "scale-[1.28] translate-y-1",
   },
@@ -102,6 +112,7 @@ export const products: Product[] = [
     slug: "moringe-juice",
     name: "Mulu Extract Moringe Juice",
     featured: true,
+    priceOrder: 1,
     categoryKey: "detox",
     categorySw: "Detox",
     categoryEn: "Detox",
@@ -127,6 +138,10 @@ export const products: Product[] = [
     howToUseEn: generalHowToUseEn,
     precautionsSw: generalPrecautionsSw,
     precautionsEn: generalPrecautionsEn,
+    priceOptions: [
+      { labelSw: "1 Lita", labelEn: "1 Liter", amount: 65000 },
+      { labelSw: "Nusu Lita", labelEn: "Half Liter", amount: 32500 },
+    ],
     image: "products/moringemuluextract/mulumoringe.png?v=20260413-2",
     imageClassName: "scale-[1.2] translate-y-1",
   },
@@ -134,6 +149,7 @@ export const products: Product[] = [
     slug: "oil-juice",
     name: "Oil Juice",
     featured: true,
+    priceOrder: 2,
     categoryKey: "detox",
     categorySw: "Detox",
     categoryEn: "Detox",
@@ -159,6 +175,10 @@ export const products: Product[] = [
     howToUseEn: generalHowToUseEn,
     precautionsSw: generalPrecautionsSw,
     precautionsEn: generalPrecautionsEn,
+    priceOptions: [
+      { labelSw: "1 Lita", labelEn: "1 Liter", amount: 100000 },
+      { labelSw: "Nusu Lita", labelEn: "Half Liter", amount: 50000 },
+    ],
     image: "products/oil-juice/oiljuice.png?v=20260413-2",
     imageClassName: "scale-[1.2] translate-y-1",
   },
@@ -198,6 +218,7 @@ export const products: Product[] = [
     slug: "nephrox",
     name: "Nephrox",
     featured: false,
+    priceOrder: 3,
     categoryKey: "kidney",
     categorySw: "Msaada wa figo",
     categoryEn: "Kidney Support",
@@ -223,6 +244,7 @@ export const products: Product[] = [
     howToUseEn: generalHowToUseEn,
     precautionsSw: generalPrecautionsSw,
     precautionsEn: generalPrecautionsEn,
+    priceOptions: [{ labelSw: "Bidhaa moja", labelEn: "Single product", amount: 100000 }],
     image: "products/nephrox/nephrox.png?v=20260413-2",
     imageClassName: "scale-[1.34] translate-y-2",
   },
@@ -230,6 +252,7 @@ export const products: Product[] = [
     slug: "oncolax",
     name: "Oncolax",
     featured: false,
+    priceOrder: 5,
     categoryKey: "pressure",
     categorySw: "Presha",
     categoryEn: "Blood Pressure",
@@ -255,6 +278,7 @@ export const products: Product[] = [
     howToUseEn: generalHowToUseEn,
     precautionsSw: generalPrecautionsSw,
     precautionsEn: generalPrecautionsEn,
+    priceOptions: [{ labelSw: "Bidhaa moja", labelEn: "Single product", amount: 500000 }],
     image: "products/oncolax/oncolax.png?v=20260413-2",
     imageClassName: "scale-[1.12] translate-y-1",
   },
@@ -262,6 +286,7 @@ export const products: Product[] = [
     slug: "sugar-care",
     name: "Sugar Care",
     featured: false,
+    priceOrder: 6,
     categoryKey: "sugar",
     categorySw: "Sukari",
     categoryEn: "Blood Sugar",
@@ -287,6 +312,7 @@ export const products: Product[] = [
     howToUseEn: generalHowToUseEn,
     precautionsSw: generalPrecautionsSw,
     precautionsEn: generalPrecautionsEn,
+    priceOptions: [{ labelSw: "Bidhaa moja", labelEn: "Single product", amount: 250000 }],
     image: "products/diabete-kisukari/diabetes-kisukari.png?v=20260413-3",
     imageClassName: "scale-[1.12] translate-y-1",
   },
@@ -323,3 +349,7 @@ export const products: Product[] = [
     imageClassName: "scale-[1.16] translate-y-1",
   },
 ];
+
+export const pricedProducts = products
+  .filter((product) => product.priceOptions?.length)
+  .sort((left, right) => (left.priceOrder ?? Number.MAX_SAFE_INTEGER) - (right.priceOrder ?? Number.MAX_SAFE_INTEGER));

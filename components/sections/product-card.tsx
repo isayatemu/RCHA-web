@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Product } from "@/data/products";
 import { useLocale } from "@/components/providers/locale-provider";
+import { ProductPricingBlock } from "@/components/sections/product-pricing-block";
 import { mediaUrl, whatsappPrefill } from "@/lib/site";
 
 type ProductCardProps = {
@@ -89,6 +90,12 @@ export const ProductCard = ({ product, featured = false }: ProductCardProps) => 
         <p className={`mt-3 text-emerald-900/80 ${featured ? "text-base leading-7" : "text-sm leading-6"}`}>
           {locale === "sw" ? product.shortSw : product.shortEn}
         </p>
+
+        {product.priceOptions?.length ? (
+          <div className="mt-5">
+            <ProductPricingBlock product={product} locale={locale} />
+          </div>
+        ) : null}
 
         <div className="mt-5 flex flex-wrap gap-2">
           <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-900">

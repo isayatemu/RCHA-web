@@ -32,8 +32,8 @@ export const business = {
     facebook: "https://web.facebook.com/nathanael.george.94/?_rdc=1&_rdr#",
     whatsapp: "https://wa.me/255754007093",
   },
-  pricingNoteSw: "Bei inategemea dozi baada ya ushauri.",
-  pricingNoteEn: "Pricing is dose-based after consultation.",
+  pricingNoteSw: "Bei zinatolewa kwa bidhaa moja moja; maelekezo ya matumizi hutolewa baada ya ushauri.",
+  pricingNoteEn: "Prices are listed per individual product; usage guidance is shared after consultation.",
 };
 
 export const disclaimer = {
