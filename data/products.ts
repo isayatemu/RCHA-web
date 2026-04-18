@@ -93,7 +93,7 @@ export const products: Product[] = [
     traditionalUsesSw: [
       "Husaidia routines za kusafisha mwili kwa njia ya asili.",
       "Husaidia kupunguza uvimbe na inflammation.",
-      "Huchangia balance ya kinga na uimara wa mwili.",
+      "Huchangia usawa wa kinga na uthabiti wa mwili.",
     ],
     traditionalUsesEn: [
       "Supports natural body cleansing routines.",
@@ -125,7 +125,7 @@ export const products: Product[] = [
     overviewEn:
       "Mulu Extract Moringe Juice is used in consultation-guided wellness plans to support body balance, detox routines, and stronger long-term vitality.",
     traditionalUsesSw: [
-      "Husaidia kuongeza nguvu na ustahimilivu wa mwili.",
+      "Husaidia kuongeza nguvu na uthabiti wa mwili.",
       "Husaidia detox ya mwili kwa ratiba ya ushauri.",
       "Huunga mkono kinga ya mwili na ustawi wa kila siku.",
     ],
@@ -155,7 +155,7 @@ export const products: Product[] = [
     categoryEn: "Detox",
     typeSw: "Kimiminika",
     typeEn: "Liquid",
-    shortSw: "Kimiminika kinachosaidia support ya uvimbe, detox, na uimara wa mwili.",
+    shortSw: "Kimiminika kinachosaidia support ya uvimbe, detox, na uthabiti wa mwili.",
     shortEn: "A liquid tonic designed to support swelling relief, detox, and overall resilience.",
     overviewSw:
       "Oil Juice huwekwa kwenye ratiba ya consultation-first kwa wateja wanaohitaji support ya uvimbe, detox ya mwili, na ufuatiliaji wa afya ya muda mrefu.",
@@ -164,7 +164,7 @@ export const products: Product[] = [
     traditionalUsesSw: [
       "Husaidia support ya uvimbe kwa njia ya asili.",
       "Husaidia mwili kwenye detox ya taratibu.",
-      "Huchangia uimara wa mwili kwenye matumizi ya kila siku.",
+      "Huchangia uthabiti wa mwili kwenye matumizi ya kila siku.",
     ],
     traditionalUsesEn: [
       "Supports swelling relief naturally.",

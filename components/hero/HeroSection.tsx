@@ -77,7 +77,7 @@ const showcaseProducts = [
       en: "Detox Herbal Powder",
     },
     summary: {
-      sw: "Kwa cleansing na body balance",
+      sw: "Kwa kusafisha mwili, kutoa sumu mwilini, na usawa wa mwili",
       en: "For cleansing and body balance",
     },
     alt: {
@@ -95,7 +95,7 @@ const showcaseProducts = [
       en: "Mulu Extract (Moringe Juice)",
     },
     summary: {
-      sw: "Detox, kinga na nguvu ya kila siku",
+      sw: "Kuongeza kinga mwilini na kuupa mwili nguvu",
       en: "Detox, immunity, and daily vitality",
     },
     alt: {
@@ -113,7 +113,7 @@ const showcaseProducts = [
       en: "Oil Juice",
     },
     summary: {
-      sw: "Support ya uvimbe na resilience",
+      sw: "Kusaidia uvimbe, vidonda, kinga, na uthabiti wa mwili",
       en: "Inflammation support and resilience",
     },
     alt: {
