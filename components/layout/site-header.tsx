@@ -7,7 +7,6 @@ import { navLinks } from "@/data/business";
 import { useLocale } from "@/components/providers/locale-provider";
 import { LanguageToggle } from "@/components/ui/language-toggle";
 import { BrandLockup } from "@/components/ui/brand-lockup";
-import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 export const SiteHeader = () => {
   const pathname = usePathname();
@@ -34,7 +33,6 @@ export const SiteHeader = () => {
         </nav>
 
         <div className="hidden items-center gap-2 lg:flex">
-          <ThemeToggle />
           <LanguageToggle />
           <Link
             href="/booking"
@@ -45,7 +43,6 @@ export const SiteHeader = () => {
         </div>
 
         <div className="flex items-center gap-2 lg:hidden">
-          <ThemeToggle />
           <LanguageToggle />
           <button
             type="button"
