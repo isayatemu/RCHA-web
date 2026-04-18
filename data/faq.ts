@@ -2,8 +2,8 @@ export const faqItems = [
   {
     qSw: "Bei inakuaje?",
     qEn: "How does pricing work?",
-    aSw: "Bei inategemea dozi baada ya ushauri. Kila mteja hupata mpango wa binafsi.",
-    aEn: "Pricing is dose-based after consultation. Each client receives a personalized plan.",
+    aSw: "Tuna bei rasmi za bidhaa moja moja na vifurushi vya usaidizi wa VVU/UKIMWI. Maelekezo ya matumizi hutolewa baada ya ushauri.",
+    aEn: "We list official individual product prices and HIV/AIDS Support Packages. Usage guidance is shared after consultation.",
   },
   {
     qSw: "Je, bidhaa ni salama?",

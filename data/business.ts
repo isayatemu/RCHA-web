@@ -32,20 +32,22 @@ export const business = {
     facebook: "https://web.facebook.com/nathanael.george.94/?_rdc=1&_rdr#",
     whatsapp: "https://wa.me/255754007093",
   },
-  pricingNoteSw: "Bei zinatolewa kwa bidhaa moja moja; maelekezo ya matumizi hutolewa baada ya ushauri.",
-  pricingNoteEn: "Prices are listed per individual product; usage guidance is shared after consultation.",
+  pricingNoteSw:
+    "Bei rasmi za bidhaa moja moja na vifurushi vya usaidizi wa VVU/UKIMWI zimewekwa wazi; maelekezo ya matumizi hutolewa baada ya ushauri.",
+  pricingNoteEn:
+    "Official individual product prices and HIV/AIDS Support Packages are listed clearly; usage guidance is shared after consultation.",
 };
 
 export const disclaimer = {
-  sw: "Huduma zetu ni za msaada wa afya asilia na hazichukui nafasi ya ushauri wa daktari. Kwa magonjwa sugu, ujauzito, au unapotumia dawa za hospitali (mf. ARVs, dawa za presha/kisukari), wasiliana na mtaalamu wa afya. Dharura? nenda hospitali mara moja.",
-  en: "Our services support traditional wellness and do not replace clinical care. If you have chronic illness, are pregnant, or use prescribed medicine (such as ARVs, blood pressure, or diabetes medication), consult a licensed clinician. In emergencies, go to a hospital immediately.",
+  sw: "Huu ni usaidizi wa ustawi wa afya tu na hauchukui nafasi ya ARV au matibabu ya kliniki. Kwa magonjwa sugu, ujauzito, au unapotumia dawa za hospitali, wasiliana na mtaalamu wa afya. Dharura? Nenda hospitali mara moja.",
+  en: "Our services support wellness and do not replace ARVs, clinical treatment, or clinician advice. If you have chronic illness, are pregnant, or use prescribed medicine, consult a licensed clinician. In emergencies, go to a hospital immediately.",
 };
 
 export const navLinks = [
   { href: "/", labelSw: "Nyumbani", labelEn: "Home" },
   { href: "/about", labelSw: "Kuhusu", labelEn: "About" },
   { href: "/products", labelSw: "Bidhaa", labelEn: "Products" },
-  { href: "/support", labelSw: "Msaada", labelEn: "Support" },
+  { href: "/support", labelSw: "Usaidizi", labelEn: "Support" },
   { href: "/booking", labelSw: "Ushauri", labelEn: "Booking" },
   { href: "/contact", labelSw: "Mawasiliano", labelEn: "Contact" },
 ];

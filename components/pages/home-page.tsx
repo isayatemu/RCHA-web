@@ -8,7 +8,6 @@ import { faqItems } from "@/data/faq";
 import { HomeOverviewSection } from "@/components/sections/home-overview-section";
 import { ProductCard } from "@/components/sections/product-card";
 import { FaqAccordion } from "@/components/sections/faq-accordion";
-import { Disclaimer } from "@/components/sections/disclaimer";
 
 export const HomePageClient = () => {
   const { locale } = useLocale();
@@ -38,8 +37,6 @@ export const HomePageClient = () => {
         </div>
         <Link href="/faq" className="mt-3 inline-block text-sm font-semibold text-maroon-900">{locale === "sw" ? "FAQ zote" : "View all FAQ"}</Link>
       </section>
-
-      <Disclaimer />
     </div>
   );
 };

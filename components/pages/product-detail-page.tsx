@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { useLocale } from "@/components/providers/locale-provider";
-import { Disclaimer } from "@/components/sections/disclaimer";
 import { ProductPricingBlock } from "@/components/sections/product-pricing-block";
 import { business } from "@/data/business";
 import { products } from "@/data/products";
@@ -124,8 +123,6 @@ export const ProductDetailPageClient = ({ slug }: { slug: string }) => {
           </ul>
         </article>
       </section>
-
-      <Disclaimer />
     </div>
   );
 };

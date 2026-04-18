@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useLocale } from "@/components/providers/locale-provider";
-import { Disclaimer } from "@/components/sections/disclaimer";
 import { supportAreas } from "@/data/support";
 
 type IconProps = {
@@ -78,8 +77,8 @@ const iconByKey = {
 
 const pageCopy = {
   sw: {
-    eyebrow: "Maeneo ya msaada wetu",
-    title: "Tunasaidia maeneo haya ya ustawi kwa mwongozo wa karibu",
+    eyebrow: "Maeneo ya usaidizi wetu",
+    title: "Tunatoa usaidizi kwenye maeneo haya ya ustawi kwa mwongozo wa karibu",
     intro:
       "Chagua eneo linalokuhusu ili uone maelezo ya msingi, tahadhari muhimu, na hatua ya kuwasiliana nasi kwa ushauri binafsi.",
     button: "Wasiliana Sasa",
@@ -162,8 +161,6 @@ export const SupportPageClient = () => {
           );
         })}
       </section>
-
-      <Disclaimer />
     </div>
   );
 };

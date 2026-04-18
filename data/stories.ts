@@ -17,7 +17,7 @@ export const stories: Story[] = [
       "A diaspora client received a step-by-step plan: nutrition, hydration timing, and personalized dosing. After two months, they reported better sleep and energy.",
   },
   {
-    titleSw: "Msaada wa tumbo kwa ratiba ya kazi ngumu",
+    titleSw: "Usaidizi wa tumbo kwa ratiba ya kazi ngumu",
     titleEn: "Digestive support during demanding work schedules",
     location: "Nairobi, Kenya",
     summarySw:
@@ -30,7 +30,7 @@ export const stories: Story[] = [
     titleEn: "Close follow-up for long-term wellness",
     location: "Dar es Salaam, Tanzania",
     summarySw:
-      "Mteja mwenye changamoto sugu alishauriwa kuendelea na kliniki huku akipata support ya asili. Alisema aliona improvement taratibu katika ustawi wa kila siku.",
+      "Mteja mwenye changamoto sugu alishauriwa kuendelea na kliniki huku akipata usaidizi wa asili. Alisema aliona improvement taratibu katika ustawi wa kila siku.",
     summaryEn:
       "A client with chronic concerns was advised to continue hospital care while receiving herbal wellness support. They reported gradual day-to-day improvement.",
   },

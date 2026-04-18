@@ -36,7 +36,9 @@ export const ProductPricingBlock = ({
             {locale === "sw" ? "Bei ya bidhaa" : "Product price"}
           </p>
           <p className={`mt-1 ${isDetail ? "text-sm" : "text-xs"} text-emerald-900/76`}>
-            {locale === "sw" ? "Kwa bidhaa moja moja, si dozi." : "Per individual product, not a dose plan."}
+            {locale === "sw"
+              ? "Kwa bidhaa moja moja. Vifurushi vya usaidizi wa VVU/UKIMWI vipo kwenye sehemu ya vifurushi."
+              : "For individual products. HIV/AIDS Support Packages are listed in the packages section."}
           </p>
         </div>
         <span className="rounded-full bg-white/90 px-3 py-1 text-[11px] font-semibold text-emerald-900 shadow-sm">

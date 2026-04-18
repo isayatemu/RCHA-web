@@ -10,7 +10,7 @@ export const BookingPageClient = () => {
     <div className="space-y-6">
       <h1 className="text-4xl font-semibold">Book Consultation</h1>
       <p className="text-sm text-emerald-900/80">
-        {locale === "sw" ? "Jaza fomu hapa chini kwa ushauri wa dozi binafsi." : "Fill this form for personalized consultation and dose planning."}
+        {locale === "sw" ? "Jaza fomu hapa chini kwa ushauri binafsi wa bidhaa, kifurushi, na matumizi." : "Fill this form below for personalized product, package, and usage guidance."}
       </p>
       <BookingForm />
     </div>

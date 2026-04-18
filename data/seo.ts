@@ -3,7 +3,7 @@
 export const pageSeo = {
   home: makeMetadata({
     title: "Rose Changa Herbalist Africa | Herbal Wellness Support",
-    description: "Trusted bilingual herbal wellness support from Arusha, Tanzania with dose-based consultation and follow-up care.",
+    description: "Trusted bilingual herbal wellness support from Arusha, Tanzania with official product pricing, HIV/AIDS Support Packages, and follow-up care.",
     path: "/",
     keywords: ["Rose Changa", "Herbalist Africa", "Arusha herbal wellness", "Swahili herbal support"],
   }),
@@ -14,7 +14,7 @@ export const pageSeo = {
   }),
   products: makeMetadata({
     title: "Products Catalog | Rose Changa Herbalist Africa",
-    description: "Browse dose-guided herbal products with compliant wellness descriptions and consultation-first guidance.",
+    description: "Browse official product prices, HIV/AIDS Support Packages, and herbal wellness products with clear guidance.",
     path: "/products",
   }),
   support: makeMetadata({
@@ -34,7 +34,7 @@ export const pageSeo = {
   }),
   booking: makeMetadata({
     title: "Book Consultation | Rose Changa Herbalist Africa",
-    description: "Submit a consultation request for personalized dose planning and wellness follow-up.",
+    description: "Submit a consultation request for product guidance, package selection, and wellness follow-up.",
     path: "/booking",
   }),
   ask: makeMetadata({
@@ -44,7 +44,7 @@ export const pageSeo = {
   }),
   faq: makeMetadata({
     title: "FAQ | Rose Changa Herbalist Africa",
-    description: "Find answers on dose-based pricing, safety precautions, delivery, timelines, and privacy policy updates.",
+    description: "Find answers on HIV/AIDS Support Package pricing, product prices, safety precautions, delivery, timelines, and privacy policy updates.",
     path: "/faq",
   }),
   affiliate: makeMetadata({

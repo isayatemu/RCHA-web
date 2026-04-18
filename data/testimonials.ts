@@ -32,7 +32,7 @@ export const testimonials: Testimonial[] = [
     location: "London, UK",
     region: "Europe",
     flag: "🇬🇧",
-    textSw: "Nilipata msaada hata nikiwa mbali, huduma yao ni ya kipekee.",
+    textSw: "Nilipata usaidizi hata nikiwa mbali, huduma yao ni ya kipekee.",
     textEn: "I received support even from abroad, their service is amazing.",
     product: "Consultation",
   },

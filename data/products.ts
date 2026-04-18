@@ -121,7 +121,7 @@ export const products: Product[] = [
     shortSw: "Kinywaji cha moringe kinachosaidia nguvu za kila siku, detox, na ustawi wa mwili.",
     shortEn: "A moringa liquid that supports daily vitality, detox routines, and body balance.",
     overviewSw:
-      "Mulu Extract Moringe Juice hutumika kwenye mpango wa ushauri binafsi kwa watu wanaotaka support ya mwili, kusaidia kusafisha mfumo wa mwili, na kuimarisha afya ya muda mrefu.",
+      "Mulu Extract Moringe Juice hutumika kwenye mpango wa ushauri binafsi kwa watu wanaotaka usaidizi wa mwili, kusaidia kusafisha mfumo wa mwili, na kuimarisha afya ya muda mrefu.",
     overviewEn:
       "Mulu Extract Moringe Juice is used in consultation-guided wellness plans to support body balance, detox routines, and stronger long-term vitality.",
     traditionalUsesSw: [
@@ -155,14 +155,14 @@ export const products: Product[] = [
     categoryEn: "Detox",
     typeSw: "Kimiminika",
     typeEn: "Liquid",
-    shortSw: "Kimiminika kinachosaidia support ya uvimbe, detox, na uthabiti wa mwili.",
+    shortSw: "Kimiminika kinachosaidia kupunguza uvimbe, detox, na uthabiti wa mwili.",
     shortEn: "A liquid tonic designed to support swelling relief, detox, and overall resilience.",
     overviewSw:
-      "Oil Juice huwekwa kwenye ratiba ya consultation-first kwa wateja wanaohitaji support ya uvimbe, detox ya mwili, na ufuatiliaji wa afya ya muda mrefu.",
+      "Oil Juice huwekwa kwenye ratiba ya consultation-first kwa wateja wanaohitaji usaidizi wa uvimbe, detox ya mwili, na ufuatiliaji wa afya ya muda mrefu.",
     overviewEn:
       "Oil Juice fits into consultation-first wellness guidance for clients seeking support around swelling, detoxification, and sustained body wellness.",
     traditionalUsesSw: [
-      "Husaidia support ya uvimbe kwa njia ya asili.",
+      "Husaidia kupunguza uvimbe kwa njia ya asili.",
       "Husaidia mwili kwenye detox ya taratibu.",
       "Huchangia uthabiti wa mwili kwenye matumizi ya kila siku.",
     ],
@@ -194,7 +194,7 @@ export const products: Product[] = [
     shortSw: "Husaidia nguvu za kiume, vitality, na ratiba ya afya ya wanaume.",
     shortEn: "Supports male strength, vitality, and men's wellness routines.",
     overviewSw:
-      "Moringa King Plus ni kimiminika cha mpango wa ushauri binafsi kwa wanaume wanaotaka support ya nguvu, stamina, na routine ya afya ya kila siku.",
+      "Moringa King Plus ni kimiminika cha mpango wa ushauri binafsi kwa wanaume wanaotaka usaidizi wa nguvu, stamina, na routine ya afya ya kila siku.",
     overviewEn:
       "Moringa King Plus is a liquid tonic used in guided plans for men seeking support around strength, stamina, and everyday wellness routines.",
     traditionalUsesSw: [
@@ -220,18 +220,18 @@ export const products: Product[] = [
     featured: false,
     priceOrder: 3,
     categoryKey: "kidney",
-    categorySw: "Msaada wa figo",
+    categorySw: "Usaidizi wa figo",
     categoryEn: "Kidney Support",
     typeSw: "Kimiminika",
     typeEn: "Liquid",
-    shortSw: "Husaidia support ya figo na ratiba ya maji na lishe iliyoelekezwa.",
+    shortSw: "Husaidia ustawi wa figo na ratiba ya maji na lishe iliyoelekezwa.",
     shortEn: "Supports kidney care routines alongside guided hydration and nutrition.",
     overviewSw:
-      "Nephrox hutumika katika mpango wa ushauri wa karibu kwa wateja wanaotaka support ya figo kwa lishe, maji, na ufuatiliaji wa matumizi.",
+      "Nephrox hutumika katika mpango wa ushauri wa karibu kwa wateja wanaotaka usaidizi wa figo kwa lishe, maji, na ufuatiliaji wa matumizi.",
     overviewEn:
       "Nephrox is used within close consultation plans for clients seeking kidney support through hydration, nutrition, and guided follow-up.",
     traditionalUsesSw: [
-      "Husaidia support ya figo kwa mpango wa karibu.",
+      "Husaidia ustawi wa figo kwa mpango wa karibu.",
       "Huchangia routine ya maji na lishe yenye uwiano.",
       "Husaidia mteja kufuata mpango wa matumizi unaoeleweka.",
     ],
@@ -258,14 +258,14 @@ export const products: Product[] = [
     categoryEn: "Blood Pressure",
     typeSw: "Poda",
     typeEn: "Powder",
-    shortSw: "Poda inayosaidia support ya presha yenye afya pamoja na lishe na mtindo wa maisha.",
+    shortSw: "Poda inayosaidia ustawi wa presha yenye afya pamoja na lishe na mtindo wa maisha.",
     shortEn: "A powder blend that supports healthy blood pressure alongside diet and lifestyle care.",
     overviewSw:
-      "Oncolax ni herbal powder ya matumizi ya ushauri binafsi kwa wateja wanaotaka support ya presha yenye afya bila kuacha ufuatiliaji wa daktari.",
+      "Oncolax ni herbal powder ya matumizi ya ushauri binafsi kwa wateja wanaotaka usaidizi wa presha yenye afya bila kuacha ufuatiliaji wa daktari.",
     overviewEn:
       "Oncolax is a herbal powder used in personalized guidance for clients seeking healthy blood pressure support without stopping clinician care.",
     traditionalUsesSw: [
-      "Husaidia support ya presha yenye afya kwa njia ya asili.",
+      "Husaidia ustawi wa presha yenye afya kwa njia ya asili.",
       "Huenda sambamba na lishe na mtindo wa maisha uliopangiliwa.",
       "Hutumika kwa ufuatiliaji wa karibu na ushauri binafsi.",
     ],
@@ -292,14 +292,14 @@ export const products: Product[] = [
     categoryEn: "Blood Sugar",
     typeSw: "Poda",
     typeEn: "Powder",
-    shortSw: "Poda inayosaidia support ya blood sugar yenye afya kwenye routine ya kila siku.",
+    shortSw: "Poda inayosaidia ustawi wa blood sugar yenye afya kwenye routine ya kila siku.",
     shortEn: "A powder blend that supports healthy blood sugar routines.",
     overviewSw:
-      "Sugar Care ni herbal powder kwa wateja wanaotaka support ya blood sugar yenye afya kupitia ushauri binafsi wa lishe, matumizi, na ufuatiliaji.",
+      "Sugar Care ni herbal powder kwa wateja wanaotaka usaidizi wa blood sugar yenye afya kupitia ushauri binafsi wa lishe, matumizi, na ufuatiliaji.",
     overviewEn:
       "Sugar Care is a herbal powder for clients seeking healthy blood sugar support through personalized nutrition, dosing guidance, and follow-up.",
     traditionalUsesSw: [
-      "Husaidia support ya blood sugar yenye afya.",
+      "Husaidia ustawi wa blood sugar yenye afya.",
       "Huchangia routine ya lishe na matumizi yenye uwiano.",
       "Hutumiwa kwa ushauri wa karibu na kufuatiliwa hatua kwa hatua.",
     ],
@@ -325,15 +325,15 @@ export const products: Product[] = [
     categoryEn: "Digestive Health",
     typeSw: "Kimiminika",
     typeEn: "Liquid",
-    shortSw: "Kimiminika kinachosaidia utulivu wa tumbo, mmeng'enyo, na support ya vidonda.",
+    shortSw: "Kimiminika kinachosaidia utulivu wa tumbo, mmeng'enyo, na usaidizi wa vidonda.",
     shortEn: "A liquid formula that supports stomach comfort, digestion, and ulcer support routines.",
     overviewSw:
-      "Gastro Care hutumika kwenye mpango wa ushauri binafsi kwa wateja wanaotaka support ya tumbo, utulivu wa mmeng'enyo, na ratiba inayofaa maisha yao ya kila siku.",
+      "Gastro Care hutumika kwenye mpango wa ushauri binafsi kwa wateja wanaotaka usaidizi wa tumbo, utulivu wa mmeng'enyo, na ratiba inayofaa maisha yao ya kila siku.",
     overviewEn:
       "Gastro Care is used in personalized plans for clients seeking stomach comfort, digestive balance, and routines that fit real life.",
     traditionalUsesSw: [
       "Husaidia utulivu wa tumbo kwa njia ya asili.",
-      "Husaidia support ya mmeng'enyo na vidonda kwa mpango wa karibu.",
+      "Husaidia mmeng'enyo na vidonda kwa mpango wa karibu.",
       "Huchangia urahisi wa kula na kufuata routine nzuri ya kila siku.",
     ],
     traditionalUsesEn: [

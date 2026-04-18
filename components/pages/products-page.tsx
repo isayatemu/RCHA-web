@@ -3,10 +3,12 @@
 import { useState } from "react";
 import { useLocale } from "@/components/providers/locale-provider";
 import { ProductCard } from "@/components/sections/product-card";
+import { HivSupportPackagesSection } from "@/components/sections/hiv-support-packages-section";
 import { productFilters, pricedProducts, products, type ProductCategoryKey } from "@/data/products";
 import { formatTsh, whatsappPrefill } from "@/lib/site";
 
 type FilterKey = "all" | ProductCategoryKey;
+type ProductViewKey = "packages" | "pricing" | "catalog";
 
 const pageContent = {
   sw: {
@@ -18,11 +20,19 @@ const pageContent = {
     featuredDescription: "Hizi ndizo bidhaa kuu zinazouliziwa sana na wateja wetu.",
     pricingTitle: "Orodha Rasmi ya Bei",
     pricingDescription:
-      "Tumeziweka bei rasmi za bidhaa zinazouliziwa sana kwenye muonekano safi unaoeleweka haraka. Bei hizi ni kwa bidhaa moja moja, si dozi.",
-    pricingNote: "Bei hizi ni za bidhaa moja moja. Maelekezo ya matumizi hutolewa baada ya mawasiliano.",
+      "Tumeziweka bei rasmi za bidhaa zinazouliziwa sana kwenye muonekano safi unaoeleweka haraka. Vifurushi vya usaidizi wa VVU/UKIMWI vimetengwa kwenye sehemu yake maalum.",
+    pricingNote: "Bei hizi ni za bidhaa moja moja. Vifurushi vya usaidizi wa VVU/UKIMWI vipo kwenye tab ya VVU/UKIMWI.",
     pricingCta: "Agiza kwa WhatsApp",
+    quickBrowseTitle: "Chagua unachotaka kuona",
+    quickBrowseDescription:
+      "Badili sehemu hapa chini uone vifurushi, bei rasmi, au catalog ya bidhaa bila kuscroll kupitia kila block yote ya ukurasa.",
+    viewTabs: {
+      packages: "VVU/UKIMWI",
+      pricing: "Bei Rasmi",
+      catalog: "Catalog",
+    },
     filterTitle: "Tafuta kwa category",
-    filterDescription: "Chuja bidhaa kwa hitaji lako na uone maelezo kwa haraka kabla ya kuwasiliana nasi.",
+    filterDescription: "Chuja bidhaa kwa hitaji lako na uone maelezo kwa haraka bila kupitia cards nyingi zisizokuhusu.",
     allProductsTitle: "Catalog ya bidhaa",
     allProductsDescription: "Kila card inaonyesha aina ya bidhaa, faida kuu, bei rasmi ilipoainishwa, na njia ya haraka ya kuagiza kupitia WhatsApp.",
     guidanceTitle: "Unahitaji kusaidiwa kuchagua?",
@@ -38,11 +48,19 @@ const pageContent = {
     featuredDescription: "These are the core products most clients ask about first.",
     pricingTitle: "Official Price List",
     pricingDescription:
-      "We placed the official prices for the most requested products in a cleaner showcase so clients can understand them at a glance. These prices are per individual product, not a dose plan.",
-    pricingNote: "These prices are per individual product. Usage guidance is shared after you contact us.",
+      "We placed the official prices for the most requested products in a cleaner showcase so clients can understand them at a glance. HIV/AIDS Support Packages are grouped in their own dedicated section.",
+    pricingNote: "These prices are for individual products. HIV/AIDS Support Packages are available in the HIV/AIDS Packages tab.",
     pricingCta: "Order on WhatsApp",
+    quickBrowseTitle: "Choose what to view",
+    quickBrowseDescription:
+      "Switch below to see HIV/AIDS packages, official prices, or the product catalog without scrolling through every block on the page.",
+    viewTabs: {
+      packages: "HIV/AIDS Packages",
+      pricing: "Official Prices",
+      catalog: "Catalog",
+    },
     filterTitle: "Browse by category",
-    filterDescription: "Filter the catalog by need and review the product details before reaching out.",
+    filterDescription: "Filter the catalog by need and review only the products that matter most to you.",
     allProductsTitle: "Full product catalog",
     allProductsDescription: "Each card shows the product type, key benefit, official price where available, and a quick WhatsApp order path.",
     guidanceTitle: "Need help choosing?",
@@ -54,14 +72,14 @@ const pageContent = {
 export const ProductsPageClient = () => {
   const { locale } = useLocale();
   const content = pageContent[locale];
+  const [activeView, setActiveView] = useState<ProductViewKey>("packages");
   const [activeFilter, setActiveFilter] = useState<FilterKey>("all");
   const guidanceHref = whatsappPrefill(
     locale === "sw"
-      ? "Habari Rose Changa, naomba msaada wa kuchagua bidhaa inayofaa hali yangu."
+      ? "Habari Rose Changa, naomba usaidizi wa kuchagua bidhaa inayofaa hali yangu."
       : "Hello Rose Changa, I need help choosing the right product for my condition.",
   );
 
-  const featuredProducts = products.filter((product) => product.featured);
   const visibleProducts =
     activeFilter === "all"
       ? products
@@ -83,129 +101,32 @@ export const ProductsPageClient = () => {
         </div>
       </section>
 
-      <section className="relative overflow-hidden rounded-[2rem] border border-emerald-900/10 bg-[linear-gradient(140deg,#f8f3e8_0%,#ffffff_48%,#edf6ee_100%)] px-6 py-8 shadow-[0_24px_60px_rgba(17,72,53,0.08)] sm:px-8 lg:px-10">
-        <div className="absolute -left-12 top-8 h-36 w-36 rounded-full bg-[#f3d58b]/35 blur-3xl" aria-hidden="true" />
-        <div className="absolute -right-12 bottom-0 h-40 w-40 rounded-full bg-emerald-200/45 blur-3xl" aria-hidden="true" />
-
-        <div className="relative flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center rounded-full border border-emerald-900/10 bg-white/88 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-maroon-900 shadow-sm backdrop-blur sm:text-xs">
-              {content.pricingTitle}
-            </div>
-            <h2 className="mt-5 text-3xl font-semibold text-emerald-950 sm:text-4xl">{content.pricingTitle}</h2>
-            <p className="mt-3 max-w-2xl text-sm leading-7 text-emerald-900/78 sm:text-base">{content.pricingDescription}</p>
-          </div>
-
-          <div className="flex flex-wrap gap-2">
-            <span className="inline-flex items-center rounded-full bg-white/90 px-4 py-2 text-xs font-semibold text-emerald-900 shadow-sm">
-              {pricedProducts.length} {locale === "sw" ? "bidhaa zenye bei rasmi" : "products with official prices"}
-            </span>
-            <span className="inline-flex items-center rounded-full bg-emerald-900 px-4 py-2 text-xs font-semibold text-white shadow-sm">
-              {locale === "sw" ? "Kwa bidhaa moja moja" : "Per individual product"}
-            </span>
-          </div>
-        </div>
-
-        <div className="relative mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {pricedProducts.map((product) => {
-            const orderHref = whatsappPrefill(
-              locale === "sw"
-                ? `Habari Rose Changa, naomba kuagiza ${product.name}.`
-                : `Hello Rose Changa, I would like to order ${product.name}.`,
-            );
-
-            return (
-              <article
-                key={product.slug}
-                className="overflow-hidden rounded-[1.75rem] border border-white/70 bg-white/90 p-5 shadow-[0_18px_34px_rgba(17,72,53,0.08)] backdrop-blur"
-              >
-                <div className="flex items-start justify-between gap-3">
-                  <div>
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-maroon-900">
-                      {locale === "sw" ? product.categorySw : product.categoryEn}
-                    </p>
-                    <h3 className="mt-2 text-xl font-semibold text-emerald-950">{product.name}</h3>
-                  </div>
-                  <span className="rounded-full bg-emerald-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-emerald-900">
-                    {locale === "sw" ? product.typeSw : product.typeEn}
-                  </span>
-                </div>
-
-                <p className="mt-3 min-h-[3.5rem] text-sm leading-6 text-emerald-900/78">
-                  {locale === "sw" ? product.shortSw : product.shortEn}
-                </p>
-
-                <div className="mt-5 grid gap-3">
-                  {product.priceOptions?.map((option) => (
-                    <div
-                      key={`${product.slug}-${option.labelEn}`}
-                      className="flex items-center justify-between rounded-[1.1rem] border border-emerald-900/10 bg-[#fcfaf4] px-4 py-3"
-                    >
-                      <span className="text-sm font-medium text-emerald-950">
-                        {locale === "sw" ? option.labelSw : option.labelEn}
-                      </span>
-                      <span className="text-base font-semibold text-maroon-900">{formatTsh(option.amount)}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <p className="mt-4 text-xs leading-6 text-emerald-900/70">{content.pricingNote}</p>
-
-                <a
-                  href={orderHref}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-5 inline-flex w-full items-center justify-center rounded-full bg-maroon-900 px-4 py-3 text-sm font-semibold text-white transition duration-200 hover:bg-maroon-800"
-                >
-                  {content.pricingCta}
-                </a>
-              </article>
-            );
-          })}
-        </div>
-      </section>
-
-      <section>
-        <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <h2 className="text-3xl font-semibold text-emerald-950">{content.featuredTitle}</h2>
-            <p className="mt-2 text-sm leading-6 text-emerald-900/76">{content.featuredDescription}</p>
-          </div>
-          <span className="inline-flex w-fit items-center rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-900">
-            {featuredProducts.length} {locale === "sw" ? "bidhaa kuu" : "core products"}
-          </span>
-        </div>
-
-        <div className="grid gap-5 xl:grid-cols-3">
-          {featuredProducts.map((product) => (
-            <ProductCard key={product.slug} product={product} featured />
-          ))}
-        </div>
-      </section>
-
       <section className="rounded-[1.9rem] border border-emerald-900/10 bg-white p-5 shadow-[0_18px_40px_rgba(17,72,53,0.06)] sm:p-6">
         <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl">
-            <h2 className="text-2xl font-semibold text-emerald-950">{content.filterTitle}</h2>
-            <p className="mt-2 text-sm leading-6 text-emerald-900/76">{content.filterDescription}</p>
+            <h2 className="text-2xl font-semibold text-emerald-950">{content.quickBrowseTitle}</h2>
+            <p className="mt-2 text-sm leading-6 text-emerald-900/76">{content.quickBrowseDescription}</p>
           </div>
-          <div className="flex flex-wrap gap-2">
-            {productFilters.map((filter) => {
-              const isActive = activeFilter === filter.key;
+          <div className="flex flex-wrap gap-2" role="tablist" aria-label={content.quickBrowseTitle}>
+            {(["packages", "pricing", "catalog"] as const).map((view) => {
+              const isActive = activeView === view;
 
               return (
                 <button
-                  key={filter.key}
+                  key={view}
                   type="button"
-                  onClick={() => setActiveFilter(filter.key)}
+                  onClick={() => setActiveView(view)}
+                  role="tab"
+                  id={`products-view-tab-${view}`}
+                  aria-selected={isActive}
+                  aria-controls={`products-view-panel-${view}`}
                   className={`rounded-full px-4 py-2 text-sm font-semibold transition duration-200 ${
                     isActive
                       ? "bg-emerald-800 text-white shadow-md"
                       : "border border-emerald-900/10 bg-[#f9fbf8] text-emerald-900 hover:bg-emerald-50"
                   }`}
-                  aria-pressed={isActive}
                 >
-                  {locale === "sw" ? filter.labelSw : filter.labelEn}
+                  {content.viewTabs[view]}
                 </button>
               );
             })}
@@ -213,23 +134,157 @@ export const ProductsPageClient = () => {
         </div>
       </section>
 
-      <section>
-        <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <h2 className="text-3xl font-semibold text-emerald-950">{content.allProductsTitle}</h2>
-            <p className="mt-2 text-sm leading-6 text-emerald-900/76">{content.allProductsDescription}</p>
-          </div>
-          <span className="inline-flex w-fit items-center rounded-full bg-[#fcf4e3] px-3 py-1 text-xs font-semibold text-maroon-900">
-            {visibleProducts.length} {locale === "sw" ? "zinaonekana sasa" : "showing now"}
-          </span>
+      {activeView === "packages" ? (
+        <div id="products-view-panel-packages" role="tabpanel" aria-labelledby="products-view-tab-packages">
+          <HivSupportPackagesSection />
         </div>
+      ) : null}
 
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {visibleProducts.map((product) => (
-            <ProductCard key={product.slug} product={product} />
-          ))}
-        </div>
-      </section>
+      {activeView === "pricing" ? (
+        <section
+          id="products-view-panel-pricing"
+          role="tabpanel"
+          aria-labelledby="products-view-tab-pricing"
+          className="relative overflow-hidden rounded-[2rem] border border-emerald-900/10 bg-[linear-gradient(140deg,#f8f3e8_0%,#ffffff_48%,#edf6ee_100%)] px-6 py-8 shadow-[0_24px_60px_rgba(17,72,53,0.08)] sm:px-8 lg:px-10"
+        >
+          <div className="absolute -left-12 top-8 h-36 w-36 rounded-full bg-[#f3d58b]/35 blur-3xl" aria-hidden="true" />
+          <div className="absolute -right-12 bottom-0 h-40 w-40 rounded-full bg-emerald-200/45 blur-3xl" aria-hidden="true" />
+
+          <div className="relative flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-3xl">
+              <div className="inline-flex items-center rounded-full border border-emerald-900/10 bg-white/88 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-maroon-900 shadow-sm backdrop-blur sm:text-xs">
+                {content.pricingTitle}
+              </div>
+              <h2 className="mt-5 text-3xl font-semibold text-emerald-950 sm:text-4xl">{content.pricingTitle}</h2>
+              <p className="mt-3 max-w-2xl text-sm leading-7 text-emerald-900/78 sm:text-base">{content.pricingDescription}</p>
+            </div>
+
+            <div className="flex flex-wrap gap-2">
+              <span className="inline-flex items-center rounded-full bg-white/90 px-4 py-2 text-xs font-semibold text-emerald-900 shadow-sm">
+                {pricedProducts.length} {locale === "sw" ? "bidhaa zenye bei rasmi" : "products with official prices"}
+              </span>
+              <span className="inline-flex items-center rounded-full bg-emerald-900 px-4 py-2 text-xs font-semibold text-white shadow-sm">
+                {locale === "sw" ? "Kwa bidhaa moja moja" : "Per individual product"}
+              </span>
+            </div>
+          </div>
+
+          <div className="relative mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {pricedProducts.map((product) => {
+              const orderHref = whatsappPrefill(
+                locale === "sw"
+                  ? `Habari Rose Changa, naomba kuagiza ${product.name}.`
+                  : `Hello Rose Changa, I would like to order ${product.name}.`,
+              );
+
+              return (
+                <article
+                  key={product.slug}
+                  className="overflow-hidden rounded-[1.75rem] border border-white/70 bg-white/90 p-5 shadow-[0_18px_34px_rgba(17,72,53,0.08)] backdrop-blur"
+                >
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-maroon-900">
+                        {locale === "sw" ? product.categorySw : product.categoryEn}
+                      </p>
+                      <h3 className="mt-2 text-xl font-semibold text-emerald-950">{product.name}</h3>
+                    </div>
+                    <span className="rounded-full bg-emerald-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-emerald-900">
+                      {locale === "sw" ? product.typeSw : product.typeEn}
+                    </span>
+                  </div>
+
+                  <p className="mt-3 min-h-[3.5rem] text-sm leading-6 text-emerald-900/78">
+                    {locale === "sw" ? product.shortSw : product.shortEn}
+                  </p>
+
+                  <div className="mt-5 grid gap-3">
+                    {product.priceOptions?.map((option) => (
+                      <div
+                        key={`${product.slug}-${option.labelEn}`}
+                        className="flex items-center justify-between rounded-[1.1rem] border border-emerald-900/10 bg-[#fcfaf4] px-4 py-3"
+                      >
+                        <span className="text-sm font-medium text-emerald-950">
+                          {locale === "sw" ? option.labelSw : option.labelEn}
+                        </span>
+                        <span className="text-base font-semibold text-maroon-900">{formatTsh(option.amount)}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <p className="mt-4 text-xs leading-6 text-emerald-900/70">{content.pricingNote}</p>
+
+                  <a
+                    href={orderHref}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-5 inline-flex w-full items-center justify-center rounded-full bg-maroon-900 px-4 py-3 text-sm font-semibold text-white transition duration-200 hover:bg-maroon-800"
+                  >
+                    {content.pricingCta}
+                  </a>
+                </article>
+              );
+            })}
+          </div>
+        </section>
+      ) : null}
+
+      {activeView === "catalog" ? (
+        <section
+          id="products-view-panel-catalog"
+          role="tabpanel"
+          aria-labelledby="products-view-tab-catalog"
+          className="space-y-6"
+        >
+          <section className="rounded-[1.9rem] border border-emerald-900/10 bg-white p-5 shadow-[0_18px_40px_rgba(17,72,53,0.06)] sm:p-6">
+            <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+              <div className="max-w-2xl">
+                <h2 className="text-2xl font-semibold text-emerald-950">{content.filterTitle}</h2>
+                <p className="mt-2 text-sm leading-6 text-emerald-900/76">{content.filterDescription}</p>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {productFilters.map((filter) => {
+                  const isActive = activeFilter === filter.key;
+
+                  return (
+                    <button
+                      key={filter.key}
+                      type="button"
+                      onClick={() => setActiveFilter(filter.key)}
+                      className={`rounded-full px-4 py-2 text-sm font-semibold transition duration-200 ${
+                        isActive
+                          ? "bg-emerald-800 text-white shadow-md"
+                          : "border border-emerald-900/10 bg-[#f9fbf8] text-emerald-900 hover:bg-emerald-50"
+                      }`}
+                      aria-pressed={isActive}
+                    >
+                      {locale === "sw" ? filter.labelSw : filter.labelEn}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <h2 className="text-3xl font-semibold text-emerald-950">{content.allProductsTitle}</h2>
+                <p className="mt-2 text-sm leading-6 text-emerald-900/76">{content.allProductsDescription}</p>
+              </div>
+              <span className="inline-flex w-fit items-center rounded-full bg-[#fcf4e3] px-3 py-1 text-xs font-semibold text-maroon-900">
+                {visibleProducts.length} {locale === "sw" ? "zinaonekana sasa" : "showing now"}
+              </span>
+            </div>
+
+            <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+              {visibleProducts.map((product) => (
+                <ProductCard key={product.slug} product={product} />
+              ))}
+            </div>
+          </section>
+        </section>
+      ) : null}
 
       <section className="overflow-hidden rounded-[2rem] bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-900 px-6 py-8 text-white shadow-[0_22px_56px_rgba(17,72,53,0.16)] sm:px-8">
         <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">

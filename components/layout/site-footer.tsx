@@ -1,7 +1,7 @@
 ﻿"use client";
 
 import Link from "next/link";
-import { business } from "@/data/business";
+import { business, disclaimer } from "@/data/business";
 import { useLocale } from "@/components/providers/locale-provider";
 import { PhoneActionLink } from "@/components/ui/phone-action-link";
 import { FacebookIcon, InstagramIcon, TikTokIcon, WhatsAppIcon } from "@/components/ui/social-icons";
@@ -68,9 +68,17 @@ export const SiteFooter = () => {
           <p className="mt-3 text-sm text-emerald-100/90">
             {locale === "sw" ? business.pricingNoteSw : business.pricingNoteEn}
           </p>
-          <Link href="/booking" className="mt-4 inline-block rounded-full bg-maroon-700 px-4 py-2 text-sm font-semibold text-white hover:bg-maroon-600">
-            Request quote
+          <Link href="/products" className="mt-4 inline-block rounded-full bg-maroon-700 px-4 py-2 text-sm font-semibold text-white hover:bg-maroon-600">
+            {locale === "sw" ? "Angalia Bei na Vifurushi" : "View Prices & Packages"}
           </Link>
+        </div>
+      </div>
+      <div className="border-t border-emerald-200/12 bg-[#082118]">
+        <div className="mx-auto max-w-7xl px-4 py-5 md:px-6">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-amber-200/90">Disclaimer</p>
+          <p className="mt-2 text-sm leading-7 text-emerald-100/88">
+            {locale === "sw" ? disclaimer.sw : disclaimer.en}
+          </p>
         </div>
       </div>
     </footer>

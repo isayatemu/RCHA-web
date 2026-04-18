@@ -34,10 +34,10 @@ const heroContent = {
     eyebrow: "Ushauri binafsi wa afya asilia",
     headline: "Ondoa sumu mwilini, rejesha afya yako kwa njia asilia",
     subtext:
-      "Tunasaidia kusafisha mwili, kupunguza uvimbe, na kuimarisha afya kupitia ushauri binafsi unaokufaa kabla ya kuchagua mpango wa dozi.",
+      "Tunasaidia kusafisha mwili, kupunguza uvimbe, na kuimarisha afya kupitia ushauri binafsi unaokufaa kabla ya kuchagua bidhaa au kifurushi kinachokufaa.",
     primaryCTA: "Anza Ushauri wa WhatsApp",
     secondaryCTA: "Tazama Bidhaa Zetu",
-    helperText: "Pata ushauri wa faragha kupitia WhatsApp kabla ya kuanza dozi yoyote.",
+    helperText: "Pata ushauri wa faragha kupitia WhatsApp kabla ya kuanza matumizi yoyote.",
     badges: [
       "Miaka 10+ ya uzoefu",
       "Ushauri binafsi",
@@ -52,10 +52,10 @@ const heroContent = {
     eyebrow: "Personalized natural wellness guidance",
     headline: "Detox your body and restore your health naturally",
     subtext:
-      "We help cleanse your body, reduce inflammation, and improve overall wellness through personalized consultation before any dose plan is recommended.",
+      "We help cleanse your body, reduce inflammation, and improve overall wellness through personalized consultation before any product or package is recommended.",
     primaryCTA: "Start WhatsApp Consultation",
     secondaryCTA: "View Products",
-    helperText: "Get private WhatsApp guidance before starting any dose plan.",
+    helperText: "Get private WhatsApp guidance before starting any wellness routine.",
     badges: [
       "10+ years experience",
       "Personalized consultation",

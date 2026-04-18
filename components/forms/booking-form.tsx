@@ -47,18 +47,20 @@ export const BookingForm = () => {
         <label className="text-sm">Location<input name="location" required placeholder="Country / City" className={fieldClass} /></label>
         <label className="text-sm">Interest
           <select name="interest" className={fieldClass} required>
-            <option value="immune">Immune support</option>
-            <option value="digestive">Digestive comfort</option>
-            <option value="kidney">Kidney support</option>
+            <option value="immune">{locale === "sw" ? "Usaidizi wa Kinga ya Mwili" : "Immune support"}</option>
+            <option value="digestive">{locale === "sw" ? "Utulivu wa Mmeng'enyo" : "Digestive comfort"}</option>
+            <option value="kidney">{locale === "sw" ? "Usaidizi wa Figo" : "Kidney support"}</option>
             <option value="hepatitis-support">
-              {locale === "sw" ? "Msaada wa Homa ya Ini" : "Hepatitis Support"}
+              {locale === "sw" ? "Usaidizi wa Homa ya Ini" : "Hepatitis Support"}
             </option>
             <option value="sugar-pressure">
               {locale === "sw" ? "Ustawi wa Sukari/Presha" : "Sugar/Pressure wellness"}
             </option>
-            <option value="womens-health">Womens cycle support</option>
+            <option value="womens-health">
+              {locale === "sw" ? "Usaidizi wa Mzunguko wa Hedhi" : "Womens cycle support"}
+            </option>
             <option value="mens-health">
-              {locale === "sw" ? "Ustawi wa Wanaume" : "Mens wellness support"}
+              {locale === "sw" ? "Usaidizi wa Afya ya Wanaume" : "Mens wellness support"}
             </option>
           </select>
         </label>

@@ -13,7 +13,7 @@ const aboutContent = {
     paragraphs: [
       "Rose Changa Herbalist Africa ni huduma ya afya asilia iliyojengwa juu ya kusikiliza mteja, kuelewa hali yake, na kumpa mwongozo unaofaa kabla ya kupendekeza bidhaa au mpango wa matumizi.",
       `Kutoka ${business.location}, tumekuwa tukihudumia wateja wa ndani ya Tanzania pamoja na diaspora kwa heshima, faragha, na ufuatiliaji wa karibu.`,
-      "Lengo letu ni kufanya ushauri wa afya asilia uwe wa karibu, wazi, na unaoaminika kwa kila mtu anayehitaji msaada.",
+      "Lengo letu ni kufanya ushauri wa afya asilia uwe wa karibu, wazi, na unaoaminika kwa kila mtu anayehitaji usaidizi.",
     ],
     quote: "Tunatanguliza mtu kwanza, ndipo bidhaa na mpango wa matumizi vinafuata.",
     primaryCta: "Anza Ushauri",
