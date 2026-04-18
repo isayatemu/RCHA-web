@@ -84,7 +84,7 @@ export const products: Product[] = [
     categoryEn: "Detox",
     typeSw: "Poda",
     typeEn: "Powder",
-    shortSw: "Poda ya mitishamba inayosaidia kusafisha mwili na kuleta balance ya kila siku.",
+    shortSw: "Poda ya mitishamba inayosaidia kusafisha mwili na kuleta usawa wa kila siku.",
     shortEn: "A herbal powder that supports body cleansing and daily balance.",
     overviewSw:
       "Detox Go Natural ni sehemu ya mpango wa ushauri wa dozi kwa wanaotaka kusaidia kusafisha mwili, kupunguza uvimbe, na kuimarisha ustawi wa muda mrefu.",

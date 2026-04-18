@@ -45,7 +45,7 @@ const heroContent = {
       "Arusha na diaspora",
     ],
     showcaseEyebrow: "Bidhaa kuu zinazoshauriwa",
-    showcaseNote: "Formulas 3 kuu kwa detox, balance na nguvu ya kila siku.",
+    showcaseNote: "Formulas 3 kuu kwa detox, usawa na nguvu ya kila siku.",
     whatsappMessage: "Habari Rose Changa, naomba kuanza ushauri wa afya kupitia WhatsApp.",
   },
   en: {
