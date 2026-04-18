@@ -20,6 +20,19 @@ export const ProductDetailPageClient = ({ slug }: { slug: string }) => {
       ? `Habari Rose Changa, naomba ushauri kuhusu ${product.name}.`
       : `Hello Rose Changa, I would like a consultation about ${product.name}.`,
   );
+  const sideEffects = locale === "sw" ? product.sideEffectsSw : product.sideEffectsEn;
+  const thirdColumnTitle = sideEffects?.length
+    ? locale === "sw"
+      ? "Madhara Yanayoweza Kuonekana"
+      : "Possible Side Effects"
+    : locale === "sw"
+      ? "Tahadhari"
+      : "Precautions";
+  const thirdColumnItems = sideEffects?.length
+    ? sideEffects
+    : locale === "sw"
+      ? product.precautionsSw
+      : product.precautionsEn;
 
   return (
     <div className="space-y-10">
@@ -114,15 +127,21 @@ export const ProductDetailPageClient = ({ slug }: { slug: string }) => {
 
         <article className="rounded-[1.75rem] border border-emerald-900/15 bg-white p-6 shadow-sm">
           <h2 className="text-xl font-semibold text-emerald-950">
-            {locale === "sw" ? "Tahadhari" : "Precautions"}
+            {thirdColumnTitle}
           </h2>
           <ul className="mt-4 list-disc space-y-3 pl-5 text-sm leading-6 text-emerald-900/85">
-            {(locale === "sw" ? product.precautionsSw : product.precautionsEn).map((item) => (
+            {thirdColumnItems.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
         </article>
       </section>
+
+      <p className="rounded-[1.5rem] border border-emerald-900/10 bg-white/85 px-5 py-4 text-sm leading-7 text-emerald-900/82 shadow-sm">
+        {locale === "sw"
+          ? "Matumizi ya dawa yazingatie ushauri wa mtaalamu wa afya."
+          : "Use of these products should follow guidance from a qualified health professional."}
+      </p>
     </div>
   );
 };

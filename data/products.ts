@@ -31,6 +31,8 @@ export type Product = {
   howToUseEn: string[];
   precautionsSw: string[];
   precautionsEn: string[];
+  sideEffectsSw?: string[];
+  sideEffectsEn?: string[];
   priceOptions?: ProductPriceOption[];
   priceOrder?: number;
   image?: string;
@@ -91,19 +93,17 @@ export const products: Product[] = [
     overviewEn:
       "Detox Go Natural is included in guided plans for clients seeking detox support, inflammation balance, and stronger long-term wellness.",
     traditionalUsesSw: [
-      "Husaidia routines za kusafisha mwili kwa njia ya asili.",
-      "Husaidia kupunguza uvimbe na inflammation.",
-      "Huchangia usawa wa kinga na uthabiti wa mwili.",
+      "Hutumika kwenye mpango wa kusafisha mwili na ustawi wa jumla chini ya ushauri wa mtaalamu.",
     ],
     traditionalUsesEn: [
-      "Supports natural body cleansing routines.",
-      "Helps reduce swelling and inflammation.",
-      "Supports immune balance and body resilience.",
+      "Used within body cleansing and general wellness plans under professional guidance.",
     ],
     howToUseSw: generalHowToUseSw,
     howToUseEn: generalHowToUseEn,
     precautionsSw: generalPrecautionsSw,
     precautionsEn: generalPrecautionsEn,
+    sideEffectsSw: ["Kuharisha."],
+    sideEffectsEn: ["Loose stool or diarrhea."],
     priceOptions: [{ labelSw: "Bidhaa moja", labelEn: "Single product", amount: 35000 }],
     image: "products/detox/detox.png?v=20260413-2",
     imageClassName: "scale-[1.28] translate-y-1",
@@ -125,19 +125,17 @@ export const products: Product[] = [
     overviewEn:
       "Mulu Extract Moringe Juice is used in consultation-guided wellness plans to support body balance, detox routines, and stronger long-term vitality.",
     traditionalUsesSw: [
-      "Husaidia kuongeza nguvu na uthabiti wa mwili.",
-      "Husaidia detox ya mwili kwa ratiba ya ushauri.",
-      "Huunga mkono kinga ya mwili na ustawi wa kila siku.",
+      "Hutumika kwenye usaidizi wa ustawi wa mwili, kinga, na nguvu za kila siku chini ya ushauri wa mtaalamu.",
     ],
     traditionalUsesEn: [
-      "Supports energy and body resilience.",
-      "Supports detox routines within guided plans.",
-      "Helps maintain immunity and daily wellness.",
+      "Used as part of wellness support for body wellness, immunity, and daily vitality under professional guidance.",
     ],
     howToUseSw: generalHowToUseSw,
     howToUseEn: generalHowToUseEn,
     precautionsSw: generalPrecautionsSw,
     precautionsEn: generalPrecautionsEn,
+    sideEffectsSw: ["Kupata usingizi."],
+    sideEffectsEn: ["Sleepiness."],
     priceOptions: [
       { labelSw: "1 Lita", labelEn: "1 Liter", amount: 65000 },
       { labelSw: "Nusu Lita", labelEn: "Half Liter", amount: 32500 },
@@ -162,19 +160,17 @@ export const products: Product[] = [
     overviewEn:
       "Oil Juice fits into consultation-first wellness guidance for clients seeking support around swelling, detoxification, and sustained body wellness.",
     traditionalUsesSw: [
-      "Husaidia kupunguza uvimbe kwa njia ya asili.",
-      "Husaidia mwili kwenye detox ya taratibu.",
-      "Huchangia uthabiti wa mwili kwenye matumizi ya kila siku.",
+      "Hutumika kwenye usaidizi wa usawa wa mwili, mmeng'enyo, na ustawi wa kila siku chini ya ushauri wa mtaalamu.",
     ],
     traditionalUsesEn: [
-      "Supports swelling relief naturally.",
-      "Helps the body through gradual detox routines.",
-      "Supports day-to-day body resilience.",
+      "Used as part of wellness support for body balance, digestion, and daily wellness under professional guidance.",
     ],
     howToUseSw: generalHowToUseSw,
     howToUseEn: generalHowToUseEn,
     precautionsSw: generalPrecautionsSw,
     precautionsEn: generalPrecautionsEn,
+    sideEffectsSw: ["Kupata usingizi."],
+    sideEffectsEn: ["Sleepiness."],
     priceOptions: [
       { labelSw: "1 Lita", labelEn: "1 Liter", amount: 100000 },
       { labelSw: "Nusu Lita", labelEn: "Half Liter", amount: 50000 },
@@ -231,19 +227,17 @@ export const products: Product[] = [
     overviewEn:
       "Nephrox is used within close consultation plans for clients seeking kidney support through hydration, nutrition, and guided follow-up.",
     traditionalUsesSw: [
-      "Husaidia ustawi wa figo kwa mpango wa karibu.",
-      "Huchangia routine ya maji na lishe yenye uwiano.",
-      "Husaidia mteja kufuata mpango wa matumizi unaoeleweka.",
+      "Hutumika kwenye usaidizi wa ustawi wa figo chini ya ushauri wa mtaalamu.",
     ],
     traditionalUsesEn: [
-      "Supports kidney care within a guided plan.",
-      "Helps reinforce balanced hydration and nutrition routines.",
-      "Supports clear, manageable day-to-day use.",
+      "Used as part of kidney wellness support under professional guidance.",
     ],
     howToUseSw: generalHowToUseSw,
     howToUseEn: generalHowToUseEn,
     precautionsSw: generalPrecautionsSw,
     precautionsEn: generalPrecautionsEn,
+    sideEffectsSw: ["Kupata usingizi."],
+    sideEffectsEn: ["Sleepiness."],
     priceOptions: [{ labelSw: "Bidhaa moja", labelEn: "Single product", amount: 100000 }],
     image: "products/nephrox/nephrox.png?v=20260413-2",
     imageClassName: "scale-[1.34] translate-y-2",
@@ -254,30 +248,28 @@ export const products: Product[] = [
     featured: false,
     priceOrder: 5,
     categoryKey: "pressure",
-    categorySw: "Presha",
-    categoryEn: "Blood Pressure",
+    categorySw: "Ustawi wa mwili",
+    categoryEn: "Body Wellness",
     typeSw: "Poda",
     typeEn: "Powder",
-    shortSw: "Poda inayosaidia ustawi wa presha yenye afya pamoja na lishe na mtindo wa maisha.",
-    shortEn: "A powder blend that supports healthy blood pressure alongside diet and lifestyle care.",
+    shortSw: "Poda inayotumika kwenye usaidizi wa faraja ya mwili na ustawi wa kila siku.",
+    shortEn: "A powder blend used to support daily comfort and overall body wellness.",
     overviewSw:
-      "Oncolax ni herbal powder ya matumizi ya ushauri binafsi kwa wateja wanaotaka usaidizi wa presha yenye afya bila kuacha ufuatiliaji wa daktari.",
+      "Oncolax ni herbal powder ya matumizi ya ushauri binafsi kwa wateja wanaotaka usaidizi wa faraja ya mwili na ustawi wa kila siku chini ya ushauri wa mtaalamu.",
     overviewEn:
-      "Oncolax is a herbal powder used in personalized guidance for clients seeking healthy blood pressure support without stopping clinician care.",
+      "Oncolax is a herbal powder used in personalized guidance for clients seeking daily comfort and general body wellness under professional guidance.",
     traditionalUsesSw: [
-      "Husaidia ustawi wa presha yenye afya kwa njia ya asili.",
-      "Huenda sambamba na lishe na mtindo wa maisha uliopangiliwa.",
-      "Hutumika kwa ufuatiliaji wa karibu na ushauri binafsi.",
+      "Hutumika kwenye usaidizi wa ustawi wa mwili na faraja ya kila siku chini ya ushauri wa mtaalamu.",
     ],
     traditionalUsesEn: [
-      "Supports healthy blood pressure naturally.",
-      "Works alongside planned nutrition and lifestyle routines.",
-      "Designed for close follow-up and personalized guidance.",
+      "Used as part of daily comfort and general body wellness support under professional guidance.",
     ],
     howToUseSw: generalHowToUseSw,
     howToUseEn: generalHowToUseEn,
     precautionsSw: generalPrecautionsSw,
     precautionsEn: generalPrecautionsEn,
+    sideEffectsSw: ["Mwili kuchoka."],
+    sideEffectsEn: ["Tiredness or body fatigue."],
     priceOptions: [{ labelSw: "Bidhaa moja", labelEn: "Single product", amount: 500000 }],
     image: "products/oncolax/oncolax.png?v=20260413-2",
     imageClassName: "scale-[1.12] translate-y-1",
@@ -299,19 +291,21 @@ export const products: Product[] = [
     overviewEn:
       "Sugar Care is a herbal powder for clients seeking healthy blood sugar support through personalized nutrition, dosing guidance, and follow-up.",
     traditionalUsesSw: [
-      "Husaidia ustawi wa blood sugar yenye afya.",
-      "Huchangia routine ya lishe na matumizi yenye uwiano.",
-      "Hutumiwa kwa ushauri wa karibu na kufuatiliwa hatua kwa hatua.",
+      "Hutumika kwenye usaidizi wa mtindo wa maisha kwa watu wanaofuatilia sukari ya damu, pamoja na ushauri wa mtaalamu.",
     ],
     traditionalUsesEn: [
-      "Supports healthy blood sugar routines.",
-      "Helps reinforce balanced nutrition and daily use.",
-      "Used with close consultation and gradual follow-up.",
+      "Used as part of lifestyle wellness support for people monitoring blood sugar, together with professional guidance.",
     ],
     howToUseSw: generalHowToUseSw,
     howToUseEn: generalHowToUseEn,
     precautionsSw: generalPrecautionsSw,
     precautionsEn: generalPrecautionsEn,
+    sideEffectsSw: [
+      "Mwili kuchoka, usingizi, kutapika wakati mwingine, au kuharisha. Dalili zikiendelea, acha kutumia na wasiliana na mtaalamu wa afya.",
+    ],
+    sideEffectsEn: [
+      "Fatigue, sleepiness, occasional vomiting, or diarrhea. If symptoms continue, stop using it and consult a health professional.",
+    ],
     priceOptions: [{ labelSw: "Bidhaa moja", labelEn: "Single product", amount: 250000 }],
     image: "products/diabete-kisukari/diabetes-kisukari.png?v=20260413-3",
     imageClassName: "scale-[1.12] translate-y-1",
