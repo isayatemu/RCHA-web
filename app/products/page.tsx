@@ -1,8 +1,13 @@
-﻿import { ProductsPageClient } from "@/components/pages/products-page";
+import { Suspense } from "react";
+import { ProductsPageClient } from "@/components/pages/products-page";
 import { pageSeo } from "@/data/seo";
 
 export const metadata = pageSeo.products;
 
 export default function ProductsPage() {
-  return <ProductsPageClient />;
+  return (
+    <Suspense>
+      <ProductsPageClient />
+    </Suspense>
+  );
 }

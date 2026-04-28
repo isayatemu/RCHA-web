@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useLocale } from "@/components/providers/locale-provider";
 import { ProductCard } from "@/components/sections/product-card";
 import { HivSupportPackagesSection } from "@/components/sections/hiv-support-packages-section";
@@ -9,6 +10,15 @@ import { formatTsh, whatsappPrefill } from "@/lib/site";
 
 type FilterKey = "all" | ProductCategoryKey;
 type ProductViewKey = "packages" | "pricing" | "catalog";
+
+const productViewKeys = ["packages", "pricing", "catalog"] as const;
+const filterKeys = productFilters.map((filter) => filter.key);
+
+const isProductViewKey = (value: string | null): value is ProductViewKey =>
+  productViewKeys.some((view) => view === value);
+
+const isFilterKey = (value: string | null): value is FilterKey =>
+  value === "all" || filterKeys.some((filter) => filter === value);
 
 const pageContent = {
   sw: {
@@ -71,9 +81,14 @@ const pageContent = {
 
 export const ProductsPageClient = () => {
   const { locale } = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
   const content = pageContent[locale];
-  const [activeView, setActiveView] = useState<ProductViewKey>("packages");
-  const [activeFilter, setActiveFilter] = useState<FilterKey>("all");
+  const activeViewParam = searchParams.get("view");
+  const activeFilterParam = searchParams.get("filter");
+  const activeView = isProductViewKey(activeViewParam) ? activeViewParam : "packages";
+  const activeFilter = activeView === "catalog" && isFilterKey(activeFilterParam) ? activeFilterParam : "all";
   const guidanceHref = whatsappPrefill(
     locale === "sw"
       ? "Habari Rose Changa, naomba usaidizi wa kuchagua bidhaa inayofaa hali yangu."
@@ -84,6 +99,28 @@ export const ProductsPageClient = () => {
     activeFilter === "all"
       ? products
       : products.filter((product) => product.categoryKey === activeFilter);
+
+  const updateProductsUrl = useCallback(
+    (nextView: ProductViewKey, nextFilter: FilterKey = "all") => {
+      const nextParams = new URLSearchParams(searchParams.toString());
+
+      if (nextView === "packages") {
+        nextParams.delete("view");
+      } else {
+        nextParams.set("view", nextView);
+      }
+
+      if (nextView === "catalog" && nextFilter !== "all") {
+        nextParams.set("filter", nextFilter);
+      } else {
+        nextParams.delete("filter");
+      }
+
+      const nextSearch = nextParams.toString();
+      router.push(nextSearch ? `${pathname}?${nextSearch}` : pathname, { scroll: false });
+    },
+    [pathname, router, searchParams],
+  );
 
   return (
     <div className="space-y-10">
@@ -115,7 +152,7 @@ export const ProductsPageClient = () => {
                 <button
                   key={view}
                   type="button"
-                  onClick={() => setActiveView(view)}
+                  onClick={() => updateProductsUrl(view, view === "catalog" ? activeFilter : "all")}
                   role="tab"
                   id={`products-view-tab-${view}`}
                   aria-selected={isActive}
@@ -250,7 +287,7 @@ export const ProductsPageClient = () => {
                     <button
                       key={filter.key}
                       type="button"
-                      onClick={() => setActiveFilter(filter.key)}
+                      onClick={() => updateProductsUrl("catalog", filter.key)}
                       className={`rounded-full px-4 py-2 text-sm font-semibold transition duration-200 ${
                         isActive
                           ? "bg-emerald-800 text-white shadow-md"
